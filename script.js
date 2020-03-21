@@ -46,46 +46,55 @@
 
 //menu
 
-const MENU = document.getElementById('main__menu');
-MENU.addEventListener('click', function(event){
-    const menuList = MENU.querySelectorAll('.navigation__link');
-    for (let i = 0; i < menuList.length; i++) {
-       menuList[i].classList.remove('navigation__link_bordered');
-    }
-    event.target.classList.add('navigation__link_bordered');    
-});
+// const MENU = document.getElementById('main__menu');
+// MENU.addEventListener('click', function(event){
+//     const menuList = MENU.querySelectorAll('.navigation__link');
+//     for (let i = 0; i < menuList.length; i++) {
+//        menuList[i].classList.remove('navigation__link_bordered');
+//     }
+//     event.target.classList.add('navigation__link_bordered');    
+// });
 
 //Обработка скрола
-  
-// let avgHeight = 0;
-// const SECTIONs = document.querySelectorAll('section');
-// SECTIONs.forEach(el => {
-//     avgHeight += el.offsetHeight; 
-// });
+const MENU = document.getElementById('main__menu');  
+let avgHeight = 0;
+const SECTIONs = document.querySelectorAll('section');
+SECTIONs.forEach(el => {
+    avgHeight += el.offsetHeight; 
+});
 
-// let ScrollOffset = document.documentElement.clientHeight - parseInt(avgHeight / SECTIONs.length);
-// ScrollOffset = (ScrollOffset < 30) ? document.querySelector('header').offsetHeight : ScrollOffset;
+let ScrollOffset = document.documentElement.clientHeight - parseInt(avgHeight / SECTIONs.length);
+ScrollOffset = (ScrollOffset < 30) ? document.querySelector('header').offsetHeight : ScrollOffset;
 
-// document.addEventListener('scroll', event => {
-//     let curPos = window.scrollY + ScrollOffset;
-//     const elList = document.querySelectorAll('section');
-//     console.log(elList)
+document.addEventListener('scroll', event => {
+    let curPos = window.scrollY + ScrollOffset;
+    const elList = document.querySelectorAll('section');
+    console.log(elList)
   
-//     const menuList =  MENU.querySelectorAll('.navigation__link');
-//     console.log( menuList)
-//     elList.forEach(el => {
-//         if ((el.offsetTop) <= curPos && (el.offsetTop + el.offsetHeight - 60) > curPos) {
-//             menuList.forEach(li => {
-//                 li.classList.remove('navigation__link_bordered');
-//                 if (el.getAttribute('id') === li.querySelector('a').getAttribute('href').substring(1)) {
-//                     li.classList.add('navigation__link_bordered');
-//                 }
-//             });
-//         }
-//     });
+    const menuList =  MENU.querySelectorAll('.navigation__link');
+    console.log( menuList)
+    elList.forEach(el => {
+        if ((el.offsetTop) <= curPos && (el.offsetTop + el.offsetHeight - 60) > curPos) {
+            menuList.forEach(li => {
+                li.classList.remove('navigation__link_bordered');
+                if (el.getAttribute('id') === li.querySelector('a').getAttribute('href').substring(1)) {
+                    li.classList.add('navigation__link_bordered');
+                }
+            });
+        }
+    });
  
+    
+    MENU.addEventListener('click', function(event){
+        const menuList = MENU.querySelectorAll('.navigation__link');
+         for (let i = 0; i < menuList.length; i++) {
+       menuList[i].classList.remove('navigation__link_bordered');
+        }
+        event.target.classList.add('navigation__link_bordered');    
+    });
 
-// });
+
+});
 
 
 
