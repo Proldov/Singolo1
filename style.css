@@ -4,6 +4,22 @@
     box-sizing: border-box;
 }
 
+.fade {
+    animation-name: fade;
+    animation-duration: 0.5s;
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+  }
+  @-webkit-keyframes fade {
+    from {opacity:.1}
+    to {opacity: 1}
+  }
+  
+  @keyframes fade{
+    from {opacity: .1}
+    to {opacity: 1}
+}
+
 html {
     font-size: 10px;   
     scroll-behavior: smooth;
@@ -160,7 +176,6 @@ h3 {
 
 .promo__arrow-left {
     position: absolute;
-    /* padding: 0px 0px 5px 42px; */
     left: 42px;
     bottom: 286px;
     opacity: 0.4;
@@ -168,7 +183,6 @@ h3 {
 
 .promo__arrow-right {
     position: absolute;
-    /* padding: 0px 39px 5px 0; */
     bottom: 286px;
     right: 40px;
     opacity: 0.4;
@@ -186,7 +200,6 @@ h3 {
 
 .promo__iphone-vertical {
     position: absolute;
-    /* padding: 0px 0px 6px 112px; */
     top: 53px;
     right: 0;
     left: 112px; 
@@ -222,11 +235,9 @@ h3 {
     top: 0px; 
 }
 
-
 .dispOff {
     display: block;
 }
-
 
 .services .wrapper {
     height: 500px;
@@ -373,15 +384,6 @@ h3 {
 
 }
 
-/* .layout-tags__link {
-    font-family: 'Lato-Regular',sans-serif;
-    font-size: 1.2rem;
-    font-weight: 400;
-    line-height: 2.1rem;
-    color: #666d89;
-    text-decoration: none;
-    transition-duration: 0.3s;
-} */
 
 .layout-4-column {
     display: flex;
@@ -394,6 +396,20 @@ h3 {
     padding: 10px;
     cursor: pointer;
 }
+
+
+.portfolio__bordered {
+    outline: rgb(240, 108, 100) solid 5px; 
+    outline-offset: -10px; 
+  
+}
+
+.layoyt-4-column__image:hover {
+    outline: rgb(240, 108, 100) solid 5px; /* цвет рамки portfolio*/
+    outline-offset: -10px; /*подстраивание размера рамки */
+    
+} 
+
 
 .portfolio-layout {
     padding-top: 11px;
